@@ -7,9 +7,35 @@ import pandas as pd
 
 
 def GetMetrixNames(url):
-    response = requests.get('{0}/api/v1/label/__name__/values'.format(url))
-    names = response.json()['data']    #Return metrix names
-    return names
+    return [
+        'libvirt_domain_block_stats_flush_requests_total',
+        'libvirt_domain_block_stats_flush_time_seconds_total',
+        'libvirt_domain_block_stats_read_bytes_total',
+        'libvirt_domain_block_stats_read_requests_total',
+        'libvirt_domain_block_stats_read_time_seconds_total',
+        'libvirt_domain_block_stats_write_bytes_total',
+        'libvirt_domain_block_stats_write_requests_total',
+        'libvirt_domain_block_stats_write_time_seconds_total',
+        'libvirt_domain_info_cpu_time_seconds_total',
+        'libvirt_domain_info_memory_usage_bytes',
+        'libvirt_domain_interface_stats_receive_bytes_total',
+        'libvirt_domain_interface_stats_receive_drops_total',
+        'libvirt_domain_interface_stats_receive_errors_total',
+        'libvirt_domain_interface_stats_receive_packets_total',
+        'libvirt_domain_interface_stats_transmit_bytes_total',
+        'libvirt_domain_interface_stats_transmit_drops_total',
+        'libvirt_domain_interface_stats_transmit_errors_total',
+        'libvirt_domain_interface_stats_transmit_packets_total ',
+        'libvirt_domain_memory_stats_disk_cache_bytes',
+        'libvirt_domain_memory_stats_major_fault_total',
+        'libvirt_domain_memory_stats_minor_fault_total',
+        'libvirt_domain_memory_stats_rss_bytes',
+        'libvirt_domain_memory_stats_unused_bytes',
+        'libvirt_domain_memory_stats_usable_bytes',
+        'libvirt_domain_memory_stats_used_percent',
+        'libvirt_domain_vcpu_cpu',
+        'libvirt_domain_vcpu_time_seconds_total'
+    ]
 
 def main():    
     if len(sys.argv) < 2:
